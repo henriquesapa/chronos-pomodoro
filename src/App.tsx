@@ -9,10 +9,20 @@ import { Cycles } from './components/Cycles';
 import { DefaultButton } from './components/ DefaultButton';
 import { PlayCircleIcon } from 'lucide-react';
 import { Footer } from './components/Footer';
+import { Heading } from './components/Heading';
+import { useState } from 'react';
 
 export function App() {
+  const [number, setNumber] = useState(0);
+
+  function handleClick() {
+    setNumber(prevState => prevState + 1);
+  }
+
   return (
     <>
+      <Heading>Número:{number}</Heading>
+      <button onClick={handleClick}>Aumenta</button>
       <Container>
         <Logo />
       </Container>
@@ -29,7 +39,7 @@ export function App() {
         <form className='form' action=''>
           <div className='formRow'>
             <DefaultInput
-              labelText='task'
+              labelText={number.toString()}
               id='meuInput'
               type='text'
               placeholder='Digite algo'
