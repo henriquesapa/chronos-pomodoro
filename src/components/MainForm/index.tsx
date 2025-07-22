@@ -3,10 +3,12 @@ import { DefaultButton } from '../ DefaultButton';
 import { Cycles } from '../Cycles';
 import { DefaultInput } from '../DefaultInput';
 import type React from 'react';
-import { useState } from 'react';
+import { useRef } from 'react';
 
 export function MainForm() {
-  const [taskName, setTaskName] = useState('');
+  // const [taskName, setTaskName] = useState('');
+  const taskNameInput = useRef<HTMLInputElement>(null);
+
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault(); //configuração pra não redirecionar a página quando dá o submit
   }
@@ -18,8 +20,9 @@ export function MainForm() {
           id='meuInput'
           type='text'
           placeholder='Digite algo'
-          value={taskName}
-          onChange={e => setTaskName(e.target.value)}
+          // value={taskName}
+          // onChange={e => setTaskName(e.target.value)}
+          ref={taskNameInput}
         />
       </div>
       <div className='formRow'>
