@@ -6,8 +6,6 @@ import styles from './styles.module.css';
 export function Cycles() {
   const { state } = useTaskContext();
 
-  console.log('STATE:', state);
-
   const cycleStep = Array.from({ length: state.currentCycle });
 
   const cycleDescriptionMap = {
