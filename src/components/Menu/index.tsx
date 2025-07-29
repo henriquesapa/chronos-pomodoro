@@ -31,14 +31,6 @@ export function Menu() {
     });
   }
 
-  // useEffect(() => {
-  //   document.documentElement.setAttribute('data-theme', theme);
-  // }); //Executado todas vezes que o componente renderiza na tela
-
-  // useEffect(() => {
-  //   console.log('Teste', Date.now());
-  // }, []); //Executa apenas quando o React monta o componente na tela pela primeira vez
-
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
