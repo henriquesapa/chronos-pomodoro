@@ -1,8 +1,8 @@
-import type { TaskStateModel } from '../../models/TaskStateModel';
+import { TaskStateModel } from '../../models/TaskStateModel';
 import { formatSecondsToMinutes } from '../../utils/formatSecondsToMinutes';
 import { getNextCycle } from '../../utils/getNextCycle';
 import { initialTaskState } from './initialTaskState';
-import { TaskActionTypes, type TaskActionModel } from './taskActions';
+import { TaskActionModel, TaskActionTypes } from './taskActions';
 
 export function taskReducer(
   state: TaskStateModel,
@@ -37,7 +37,6 @@ export function taskReducer(
         }),
       };
     }
-
     case TaskActionTypes.COMPLETE_TASK: {
       return {
         ...state,
@@ -58,11 +57,14 @@ export function taskReducer(
     case TaskActionTypes.COUNT_DOWN: {
       return {
         ...state,
-        secondsRemaining: action.payload.secondsRemaing,
+        secondsRemaining: action.payload.secondsRemaining,
         formattedSecondsRemaining: formatSecondsToMinutes(
-          action.payload.secondsRemaing,
+          action.payload.secondsRemaining,
         ),
       };
+    }
+    case TaskActionTypes.CHANGE_SETTINGS: {
+      return { ...state, config: { ...action.payload } };
     }
   }
 

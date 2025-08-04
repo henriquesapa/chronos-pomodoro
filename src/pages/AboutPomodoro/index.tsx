@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Container } from '../../components/Container';
 import { GenericHtml } from '../../components/GenericHtml';
 import { Heading } from '../../components/Heading';
@@ -5,6 +6,10 @@ import { RouterLink } from '../../components/RouterLink';
 import { MainTemplate } from '../../templates/MainTemplate';
 
 export function AboutPomodoro() {
+  useEffect(() => {
+    document.title = 'Entenda a Técnica Pomodoro - Chronos Pomodoro';
+  }, []);
+
   return (
     <MainTemplate>
       <Container>
@@ -22,20 +27,16 @@ export function AboutPomodoro() {
           <img src='https://placehold.co/1920x1080' alt='' />
 
           <h2>Como funciona o Pomodoro tradicional?</h2>
-
           <ul>
             <li>
               <strong>1. Defina uma tarefa</strong> que você deseja realizar.
             </li>
-
             <li>
               <strong>2. Trabalhe nela por 25 minutos</strong> sem interrupções.
             </li>
-
             <li>
               <strong>3. Faça uma pausa curta de 5 minutos</strong>.
             </li>
-
             <li>
               <strong>4. A cada 4 ciclos, faça uma pausa longa</strong>{' '}
               (geralmente 15 a 30 minutos).
@@ -52,7 +53,6 @@ export function AboutPomodoro() {
           </p>
 
           <h3>⚙️ Personalização do tempo</h3>
-
           <p>
             Você pode configurar o tempo de foco, descanso curto e descanso
             longo do jeito que quiser! Basta acessar a{' '}
@@ -61,26 +61,21 @@ export function AboutPomodoro() {
           </p>
 
           <h3>🔁 Ciclos organizados em sequência</h3>
-
           <p>
             A cada ciclo completado, uma nova task é adicionada automaticamente
             ao seu histórico, e o app já sugere o próximo ciclo (foco ou
             descanso).
           </p>
-
           <p>
             <strong>Nosso padrão:</strong>
           </p>
-
           <ul>
             <li>
               Ciclos <strong>ímpares</strong>: Trabalho (foco).
             </li>
-
             <li>
               Ciclos <strong>pares</strong>: Descanso curto.
             </li>
-
             <li>
               Ciclo <strong>8</strong>: Descanso longo especial, pra resetar o
               ciclo completo.
@@ -88,17 +83,13 @@ export function AboutPomodoro() {
           </ul>
 
           <h3>🍅 Visualização dos ciclos</h3>
-
           <p>
             Logo abaixo do cronômetro, você verá bolinhas coloridas
             representando os ciclos:
           </p>
-
           <ul>
             <li>🟡 Amarelo: Ciclo de trabalho (foco).</li>
-
             <li>🟢 Verde: Descanso curto.</li>
-
             <li>🔵 Azul: Descanso longo (aparece a cada 8 ciclos).</li>
           </ul>
 
@@ -109,7 +100,6 @@ export function AboutPomodoro() {
           </p>
 
           <h3>📊 Histórico automático</h3>
-
           <p>
             Todas as suas tarefas e ciclos concluídos ficam salvos no{' '}
             <RouterLink href='/history/'>histórico</RouterLink>, com status de
@@ -118,14 +108,10 @@ export function AboutPomodoro() {
           </p>
 
           <h2>Por que usar o Chronos Pomodoro?</h2>
-
           <ul>
             <li>✅ Organize seu foco com clareza.</li>
-
             <li>✅ Trabalhe e descanse na medida certa.</li>
-
             <li>✅ Personalize seus próprios ciclos e tempos.</li>
-
             <li>✅ Acompanhe seu histórico automaticamente.</li>
           </ul>
 
